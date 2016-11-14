@@ -11,6 +11,7 @@ namespace rbt{
 		{}
 		RBNode(std::pair<std::string, int>& kv)kv(kv)
 		{}
+		~RBNode();
 		RBNode* parent;
 		RBNode* left;
 		RBNode* right;
@@ -37,5 +38,8 @@ namespace rbt{
 		void rotateRight(pnode_t );
 		void fixAfterInsertion(pnode_t node);
 		void fixAfterDeletion(pnode_t node);
+		pnode_t successor(pnode_t node);
+		pnode_t get(const std::string& key, int);
+		void delete(pnode_t node);
 	};
 }
