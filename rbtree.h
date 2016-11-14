@@ -25,9 +25,9 @@ namespace rbt{
 	public:
 		RBTree():root(nullptr)
 		{}
-		bool insert();
+		bool insert(const std::pair<std::string, int>& kv);
 		pnode_t get();
-		bool remove();
+		void delete(const std::string& key);
 		~RBTree();
 	private:
 		pnode_t root;
@@ -35,6 +35,7 @@ namespace rbt{
 	private:
 		void rotateLeft(pnode_t );
 		void rotateRight(pnode_t );
-
+		void fixAfterInsertion(pnode_t node);
+		void fixAfterDeletion(pnode_t node);
 	};
 }
